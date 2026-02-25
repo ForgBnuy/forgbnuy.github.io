@@ -1,15 +1,86 @@
----
-layout: default
-title: Home
----
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>{{ page.title }}</title>
-  </head>
-  <body>
-    <h1>{{ "Hello World!" | downcase }}</h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrzej Śleszyński | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22monospace%22 font-weight=%22900%22 fill=%22%232E48FF%22>&amp;/</text></svg>">
+</head>
+<body>
+
+    <header class="wiki-header">
+        <nav class="nav-top">
+            <div class="site-title"><a href="index.html" style="color: inherit; text-decoration: none;">ANDRZEJ_ŚLESZYŃSKI</a></div>
+            <div class="nav-links">
+                <a href="design.html">DESIGN</a>
+                <a href="music.html">MUSIC</a>
+                <a href="bio.html">BIO</a>
+            </div>
+        </nav>
+        <div class="context-bar">
+            <div class="path"><a href="index.html" style="color: inherit; text-decoration: none;">INDEX</a> / <span class="active-context">HOME</span></div>
+            <div class="metadata">SYSTEM_V1.6_STABLE</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro-wrap">
+            <div class="intro-text">
+                <h1>ARCHIVE_01</h1>
+                <p>A curated selection of visual systems and sonic landscapes. Built on the principles of intentionality and high-contrast minimalism.</p>
+            </div>
+            <div class="photo-container">
+                <img src="photo.jpg" alt="Andrzej Śleszyński" class="square-photo">
+            </div>
+        </section>
+
+        <div class="split-container">
+            
+            <section class="content-section" style="border-top: none;">
+                <h2 class="section-title">01_Latest_Design</h2>
+                <div class="wiki-grid-single">
+                    <div class="wiki-entry">
+                        <a href="impro-kapciu.html" class="visual-link cobalt-bg">01</a>
+                        <div class="entry-meta">
+                            <span class="label">VISUAL_IDENTITY</span>
+                            <span class="title">IMPRO_W_KAPCIU</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="design.html" class="view-all">VIEW ALL DESIGN →</a>
+            </section>
+
+            <section class="content-section" style="border-top: none;">
+                <h2 class="section-title">02_Latest_Sound</h2>
+                <div class="wiki-grid-single">
+                    <div class="wiki-entry">
+                        <a href="music.html" class="visual-link tangerine-bg">▶</a>
+                        <div class="entry-meta">
+                            <span class="label">WITBEZKACY</span>
+                            <span class="title">SKĄPIEC_LP</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="music.html" class="view-all">VIEW ALL MUSIC →</a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="wiki-footer">
+        <div class="footer-wrap">
+            <div class="sitemap">
+                <a href="index.html">Home</a>
+                <a href="design.html">Design</a>
+                <a href="music.html">Music</a>
+                <a href="bio.html">Bio</a>
+            </div>
+            <a href="mailto:hello@sleszynski.com" class="mail-icon-link" title="Contact Me">
+                &#9993;
+            </a>
+        </div>
+    </footer>
+
+</body>
 </html>

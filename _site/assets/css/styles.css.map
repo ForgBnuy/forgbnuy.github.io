@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["../../_sass/main.scss"],"names":[],"mappings":"AAAA;EACE;;;AAEF;EACE","sourcesContent":[".current {\n  color: rgb(255, 0, 0);\n}\n.body {\n  background-color: rgb(0, 0, 0);\n}\n"],"file":"styles.css"}
