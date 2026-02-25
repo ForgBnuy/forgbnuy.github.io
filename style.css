@@ -1,4 +1,4 @@
-/* ANDRZEJ ŚLESZYŃSKI // SYSTEM V1.7
+/* ANDRZEJ ŚLESZYŃSKI // SYSTEM V1.10
    WANDA SAZO + OSCEAN ARCHIVE LOGIC */
 
 :root {
@@ -29,7 +29,7 @@ body {
   overflow-x: hidden;
 }
 
-/* HEADER & NAV */
+/* HEADER & NAVIGATION */
 .wiki-header {
   border: 1px solid var(--border);
   margin-top: 20px;
@@ -57,7 +57,6 @@ body {
   font-weight: bold;
   font-size: 12px;
 }
-.nav-links a:hover,
 .nav-links a.active {
   color: var(--accent);
 }
@@ -75,7 +74,7 @@ body {
   font-weight: bold;
 }
 
-/* UNIFIED LINEAR INTRO */
+/* UNIFIED LINEAR INTRO (PHOTO ON RIGHT) */
 .intro-wrap {
   display: flex;
   justify-content: space-between;
@@ -112,7 +111,7 @@ body {
   display: block;
 }
 
-/* GRID SYSTEMS */
+/* GRID SYSTEMS (DESKTOP) */
 .content-section {
   padding-top: 40px;
   margin-bottom: 60px;
@@ -128,23 +127,17 @@ body {
   font-weight: bold;
 }
 
-.wiki-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-/* HERO SCROLL (FOR MUSIC/INDEX LATEST) */
+.wiki-grid,
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
 
 .wiki-entry {
   border: 1px solid var(--border);
   background: #fff;
-  transition: transform 0.2s;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .wiki-entry:hover {
   transform: translateY(-5px);
@@ -223,6 +216,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .sitemap {
   display: flex;
@@ -242,7 +237,7 @@ body {
   line-height: 1;
 }
 
-/* MOBILE RESPONSIVE TOOLS */
+/* MOBILE RESPONSIVE LOGIC */
 @media (max-width: 850px) {
   .intro-wrap {
     flex-direction: column;
@@ -254,22 +249,26 @@ body {
     max-width: 300px;
   }
 
-  /* Horizontal Scroll Logic */
-  .featured-grid,
+  /* Standard Grid stays vertical */
   .wiki-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero Grid scrolls horizontally */
+  .featured-grid {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    margin: 0 -20px;
+    padding: 0 20px 20px 20px;
   }
   .featured-grid::-webkit-scrollbar {
     display: none;
   }
-
-  .wiki-entry {
+  .featured-grid .wiki-entry {
     flex: 0 0 85%;
     scroll-snap-align: center;
   }
