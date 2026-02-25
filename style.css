@@ -1,4 +1,4 @@
-/* ANDRZEJ ŚLESZYŃSKI // SYSTEM V1.10
+/* ANDRZEJ ŚLESZYŃSKI // SYSTEM V1.11
    WANDA SAZO + OSCEAN ARCHIVE LOGIC */
 
 :root {
@@ -57,6 +57,7 @@ body {
   font-weight: bold;
   font-size: 12px;
 }
+.nav-links a:hover,
 .nav-links a.active {
   color: var(--accent);
 }
@@ -111,7 +112,40 @@ body {
   display: block;
 }
 
-/* GRID SYSTEMS (DESKTOP) */
+/* PRIMARY NAVIGATION BUTTONS */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--border);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-cobalt {
+  background-color: var(--accent);
+  color: var(--white);
+}
+.btn-tangerine {
+  background-color: var(--high);
+  color: var(--white);
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+/* GRID SYSTEMS */
 .content-section {
   padding-top: 40px;
   margin-bottom: 60px;
@@ -175,36 +209,6 @@ body {
   font-size: 13px;
 }
 
-/* TABLES */
-.table-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  margin-bottom: 40px;
-}
-.archive-table {
-  width: 100%;
-  min-width: 500px;
-  border-collapse: collapse;
-  background: #fff;
-  border: 1px solid #000;
-}
-.archive-table td {
-  padding: 1.2rem;
-  border-bottom: 1px solid #eee;
-}
-.archive-table a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: 700;
-}
-.meta-label {
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 11px;
-  color: var(--accent);
-  width: 150px;
-}
-
 /* FOOTER */
 .wiki-footer {
   margin: 80px 0 40px;
@@ -248,13 +252,19 @@ body {
     width: 100%;
     max-width: 300px;
   }
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn {
+    text-align: center;
+    width: 100%;
+  }
 
-  /* Standard Grid stays vertical */
   .wiki-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Hero Grid scrolls horizontally */
   .featured-grid {
     display: flex;
     overflow-x: auto;
