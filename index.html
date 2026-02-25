@@ -11,6 +11,17 @@
     />
   </head>
   <body>
+    <div id="preloader">
+      <div class="loader-content">
+        <div class="loader-text">ARCHIVE_BOOT_SEQUENCE...</div>
+        <div class="loader-bar"><div class="progress"></div></div>
+        <div class="status-lines">
+          <span>> [OK] SYSTEM_INITIALIZED</span>
+          <span>> [OK] STYLE_LOADED</span>
+        </div>
+      </div>
+    </div>
+
     <header class="wiki-header">
       <nav class="nav-top">
         <div class="site-title">
@@ -19,9 +30,8 @@
           >
         </div>
         <div class="nav-links">
-          <a href="design.html">DESIGN</a>
-          <a href="music.html">MUSIC</a>
-          <a href="bio.html">BIO</a>
+          <a href="design.html">DESIGN</a><a href="music.html">MUSIC</a
+          ><a href="bio.html">BIO</a>
         </div>
       </nav>
       <div class="context-bar">
@@ -31,7 +41,7 @@
           >
           / <span class="active-context">HOME</span>
         </div>
-        <div class="metadata">SYSTEM_V1.11</div>
+        <div class="metadata">SYSTEM_V1.12_BOOT_ACTIVE</div>
       </div>
     </header>
 
@@ -41,9 +51,8 @@
           <h1>ARCHIVE_01</h1>
           <p>
             A curated selection of visual systems and sonic landscapes. Built on
-            the principles of intentionality and high-contrast minimalism.
+            intentionality and high-contrast minimalism.
           </p>
-
           <div class="button-group">
             <a href="design.html" class="btn btn-cobalt">EXPLORE_DESIGN</a>
             <a href="music.html" class="btn btn-tangerine">EXPLORE_SOUND</a>
@@ -60,15 +69,15 @@
           <div class="wiki-entry">
             <a href="impro-kapciu.html" class="visual-link cobalt-bg">01</a>
             <div class="entry-meta">
-              <span class="label">DESIGN</span>
-              <span class="title">IMPRO_W_KAPCIU</span>
+              <span class="label">DESIGN</span
+              ><span class="title">IMPRO_W_KAPCIU</span>
             </div>
           </div>
           <div class="wiki-entry">
             <a href="music.html" class="visual-link tangerine-bg">▶</a>
             <div class="entry-meta">
-              <span class="label">WITBEZKACY</span>
-              <span class="title">SKĄPIEC_LP</span>
+              <span class="label">WITBEZKACY</span
+              ><span class="title">SKĄPIEC_LP</span>
             </div>
           </div>
         </div>
@@ -78,19 +87,32 @@
     <footer class="wiki-footer">
       <div class="footer-wrap">
         <div class="sitemap">
-          <a href="index.html">Home</a>
-          <a href="design.html">Design</a>
-          <a href="music.html">Music</a>
-          <a href="bio.html">Bio</a>
+          <a href="index.html">Home</a><a href="design.html">Design</a
+          ><a href="music.html">Music</a><a href="bio.html">Bio</a>
         </div>
-        <a
-          href="mailto:hello@sleszynski.com"
-          class="mail-icon-link"
-          title="Contact Me"
-        >
-          &#9993;
-        </a>
+        <a href="mailto:hello@sleszynski.com" class="mail-icon-link">&#9993;</a>
       </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const preloader = document.getElementById("preloader");
+        if (sessionStorage.getItem("booted")) {
+          if (preloader) preloader.style.display = "none";
+        } else {
+          window.addEventListener("load", function () {
+            setTimeout(() => {
+              preloader.style.transition =
+                "opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1)";
+              preloader.style.opacity = "0";
+              sessionStorage.setItem("booted", "true");
+              setTimeout(() => {
+                preloader.style.display = "none";
+              }, 600);
+            }, 2500);
+          });
+        }
+      });
+    </script>
   </body>
 </html>
