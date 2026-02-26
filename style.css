@@ -1,5 +1,5 @@
-/* ANDRZEJ ŚLESZYŃSKI // SYSTEM V1.11
-   WANDA SAZO + OSCEAN ARCHIVE LOGIC */
+/* ANDRZEJ ŚLESZYŃSKI // SYSTEM V1.14
+   3-COLUMN TABLE + WHITE BG UPDATES */
 
 :root {
   --bg: #ebebeb; /* Concrete */
@@ -75,7 +75,7 @@ body {
   font-weight: bold;
 }
 
-/* UNIFIED LINEAR INTRO (PHOTO ON RIGHT) */
+/* INTRO WRAP */
 .intro-wrap {
   display: flex;
   justify-content: space-between;
@@ -112,40 +112,35 @@ body {
   display: block;
 }
 
-/* PRIMARY NAVIGATION BUTTONS */
+/* BUTTONS */
 .button-group {
   display: flex;
   gap: 15px;
   margin-top: 30px;
 }
-
 .btn {
-  display: inline-block;
   padding: 12px 24px;
   font-weight: 900;
   text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 0.05em;
+  font-size: 11px;
   border: 1px solid var(--border);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: 0.2s;
 }
-
 .btn-cobalt {
-  background-color: var(--accent);
+  background: var(--accent);
   color: var(--white);
 }
 .btn-tangerine {
-  background-color: var(--high);
+  background: var(--high);
   color: var(--white);
 }
-
 .btn:hover {
-  background-color: transparent;
+  background: transparent;
   color: var(--text);
   transform: translateY(-2px);
 }
 
-/* GRID SYSTEMS */
+/* CONTENT SECTIONS & GRIDS */
 .content-section {
   padding-top: 40px;
   margin-bottom: 60px;
@@ -160,7 +155,6 @@ body {
   text-transform: uppercase;
   font-weight: bold;
 }
-
 .wiki-grid,
 .featured-grid {
   display: grid;
@@ -171,10 +165,7 @@ body {
 .wiki-entry {
   border: 1px solid var(--border);
   background: #fff;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.wiki-entry:hover {
-  transform: translateY(-5px);
+  transition: 0.2s;
 }
 .visual-link {
   display: flex;
@@ -182,15 +173,9 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 900;
   color: #fff;
-}
-.cobalt-bg {
-  background: var(--accent);
-}
-.tangerine-bg {
-  background: var(--high);
 }
 .entry-meta {
   padding: 15px;
@@ -209,6 +194,47 @@ body {
   font-size: 13px;
 }
 
+/* REFINED 3-COLUMN TABLE */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 40px;
+}
+.archive-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  background: #fff; /* White background */
+  border: 1px solid var(--border);
+}
+.archive-table td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+/* Specific column alignment */
+.archive-table td:first-child {
+  width: 150px;
+  opacity: 0.8;
+} /* Date */
+.archive-table td:nth-child(2) {
+  font-weight: bold;
+} /* Title/Link */
+.archive-table td:last-child {
+  text-align: right;
+  font-weight: 800;
+  font-size: 11px;
+} /* Tag */
+
+.archive-table a {
+  text-decoration: none;
+  color: var(--accent);
+}
+.archive-table a:hover {
+  text-decoration: underline;
+}
+
 /* FOOTER */
 .wiki-footer {
   margin: 80px 0 40px;
@@ -221,7 +247,6 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
 }
 .sitemap {
   display: flex;
@@ -241,7 +266,6 @@ body {
   line-height: 1;
 }
 
-/* MOBILE RESPONSIVE LOGIC */
 @media (max-width: 850px) {
   .intro-wrap {
     flex-direction: column;
@@ -254,26 +278,18 @@ body {
   }
   .button-group {
     flex-direction: column;
-    gap: 10px;
   }
-  .btn {
-    text-align: center;
-    width: 100%;
-  }
-
   .wiki-grid {
     grid-template-columns: 1fr;
   }
-
   .featured-grid {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 15px;
-    padding-bottom: 20px;
-    -webkit-overflow-scrolling: touch;
     margin: 0 -20px;
     padding: 0 20px 20px 20px;
+    scrollbar-width: none;
   }
   .featured-grid::-webkit-scrollbar {
     display: none;
