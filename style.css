@@ -215,17 +215,22 @@ body {
 
 /* Specific column alignment */
 .archive-table td:first-child {
-  width: 150px;
-  opacity: 0.8;
-} /* Date */
+  width: 200px; /* Increased width for the date column */
+  padding-right: 8rem; /* Large gutter between Date and Title */
+  opacity: 0.6;
+}
+
 .archive-table td:nth-child(2) {
+  padding-right: 8rem; /* Large gutter between Title and Tag */
   font-weight: bold;
-} /* Title/Link */
+}
+
 .archive-table td:last-child {
   text-align: right;
   font-weight: 800;
   font-size: 11px;
-} /* Tag */
+  width: 150px; /* Specific width to anchor the right tag */
+}
 
 .archive-table a {
   text-decoration: none;
