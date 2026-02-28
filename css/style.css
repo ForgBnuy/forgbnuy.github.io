@@ -53,7 +53,6 @@ body {
 }
 
 /* --- THE SOLID GRADIENT MIXIN --- */
-/* Applied to the background, header, and sidebar so they all perfectly blend */
 .solid-gradient {
   background-color: var(--bg-color);
   background-image:
@@ -61,7 +60,7 @@ body {
     radial-gradient(ellipse at 15% 25%, var(--grad-1) 0%, transparent 60%),
     radial-gradient(ellipse at 75% 80%, var(--grad-2) 0%, transparent 60%),
     radial-gradient(ellipse at 85% 20%, var(--grad-3) 0%, transparent 60%);
-  background-attachment: fixed; /* Magic bullet that ensures seamless matching everywhere */
+  background-attachment: fixed;
   transition: background-color 0.3s ease;
 }
 
@@ -84,7 +83,7 @@ body {
   pointer-events: none;
 }
 
-/* The Dot Layer (Avoids the PC Header & Sidebar) */
+/* The Dot Layer */
 .grain-overlay::after {
   content: "";
   position: absolute;
@@ -96,6 +95,9 @@ body {
   background-size: 30px 30px;
   z-index: -2;
   transition: left 0.3s ease;
+}
+body.sidebar-collapsed .grain-overlay::after {
+  left: 0;
 }
 
 html[lang="pl"] .lang-en {
@@ -208,7 +210,7 @@ p {
   left: 0;
   bottom: 0;
   width: 300px;
-  padding: 3rem 2rem; /* Matches Main Content Top Padding */
+  padding: 3rem 2rem;
   border-right: 1px solid var(--border-color);
   overflow-y: auto;
   z-index: 100;
@@ -278,7 +280,7 @@ body.sidebar-collapsed #nav-links {
 main {
   margin-top: 60px;
   margin-left: 300px;
-  padding: 3rem 4rem; /* Top padding aligned exactly with #nav-links padding */
+  padding: 3rem 4rem;
   flex: 1;
   max-width: 1000px;
   display: flex;
@@ -314,36 +316,8 @@ article {
   border: 1px solid var(--border-color);
   flex-shrink: 0;
 }
-
-/* PC Grids */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-.grid-item {
-  display: block;
-  color: var(--text-color);
-}
-.grid-image {
-  width: 100%;
-  aspect-ratio: 1;
-  background-size: cover;
-  background-position: center;
-  border: 1px solid var(--border-color);
-  transition: filter 0.3s;
-}
-.grid-item:hover .grid-image {
-  filter: brightness(0.85);
-}
-.grid-title {
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  text-align: left;
-}
-.grid-meta {
-  font-size: 0.8rem;
-  opacity: 0.6;
+.profile-text h2 {
+  margin-top: 0;
 }
 
 /* Tables & Lists */
@@ -379,6 +353,37 @@ th {
 }
 .text-list li {
   margin-bottom: 0.5rem;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.grid-item {
+  display: block;
+  color: var(--text-color);
+}
+.grid-image {
+  width: 100%;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--border-color);
+  transition: filter 0.3s;
+}
+.grid-item:hover .grid-image {
+  filter: brightness(0.85);
+}
+.grid-title {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  text-align: left;
+}
+.grid-meta {
+  font-size: 0.8rem;
+  opacity: 0.6;
 }
 
 .cv-grid {
@@ -465,25 +470,35 @@ footer {
 
   main {
     margin-left: 0;
-    padding: 3rem 1.5rem 2rem 1.5rem;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
   }
   body.sidebar-collapsed main {
     margin-left: 0;
     padding-left: 1.5rem;
   }
 
-  /* Mobile Homepage fixes */
+  /* Fixed Mobile Homepage: Floats image left so text perfectly fills unused right space */
   .profile-section {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    gap: 1.5rem;
+    display: block;
+    margin-bottom: 2rem;
   }
+  .profile-photo {
+    float: left;
+    margin: 0 1.2rem 0.5rem 0;
+    width: 120px;
+    height: 120px;
+  }
+  .profile-section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Mobile Table Card Layout Fix */
+  /* Mobile Table Card Layout */
   table,
   thead,
   tbody,
