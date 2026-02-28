@@ -3,23 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="theme-color"
-      content="#F5F5F0"
-      media="(prefers-color-scheme: light)"
-    />
-    <meta
-      name="theme-color"
-      content="#1a1a19"
-      media="(prefers-color-scheme: dark)"
-    />
-    <title>Design - witbezkacy</title>
+    <title>Project Title - witbezkacy</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="grain-overlay solid-gradient"></div>
+    <div class="grain-overlay"></div>
+    <button id="desktop-toggle" aria-label="Open Menu">☰</button>
+
     <aside class="sidebar">
-      <div class="sidebar-header solid-gradient">
+      <div class="sidebar-header">
         <button class="menu-btn" aria-label="Menu">☰</button>
         <h1><a href="index.html">witbezkacy</a></h1>
         <div class="header-controls">
@@ -27,7 +19,7 @@
           <button class="theme-btn" aria-label="Toggle Dark Mode">🌓</button>
         </div>
       </div>
-      <nav id="nav-links" class="solid-gradient">
+      <nav id="nav-links">
         <ul class="nav-tree">
           <li>
             <a href="index.html"
@@ -36,7 +28,10 @@
             >
           </li>
           <li>
-            <a href="personal.html"
+            <a
+              href="javascript:void(0)"
+              class="nav-toggle"
+              data-target="music-menu"
               ><span class="lang-en">Music</span
               ><span class="lang-pl">Muzyka</span></a
             >
@@ -46,9 +41,6 @@
                   ><span class="lang-en">Personal</span
                   ><span class="lang-pl">Osobiste</span></a
                 >
-                <ul class="tree-level-2">
-                  <li><a href="project-personal.html">Album Title</a></li>
-                </ul>
               </li>
               <li>
                 <a href="projects.html"
@@ -56,17 +48,21 @@
                   ><span class="lang-pl">Projekty</span></a
                 >
                 <ul class="tree-level-2">
-                  <li><a href="project-collab.html">Project Alpha</a></li>
+                  <li>
+                    <a href="project-sample.html" class="active"
+                      >Project Title</a
+                    >
+                  </li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="design.html" class="active"
+            <a href="design.html"
               ><span class="lang-en">Graphic Design</span
               ><span class="lang-pl">Projektowanie</span></a
             >
-            <ul id="design-menu" class="tree-level-1">
+            <ul class="tree-level-1">
               <li><a href="project-design.html">Brand Identity</a></li>
             </ul>
           </li>
@@ -75,9 +71,6 @@
               ><span class="lang-en">Others</span
               ><span class="lang-pl">Inne</span></a
             >
-            <ul id="others-menu" class="tree-level-1">
-              <li><a href="project-other.html">Sound Essay</a></li>
-            </ul>
           </li>
           <li><a href="bio.html">Bio / CV</a></li>
         </ul>
@@ -85,52 +78,73 @@
     </aside>
 
     <main>
-      <section id="design">
-        <h2>
-          <span class="lang-en">Graphic Design</span
-          ><span class="lang-pl">Projektowanie Graficzne</span>
-        </h2>
-        <p class="lang-en">
-          Selected visual works, branding, and typography experiments.
-        </p>
-        <p class="lang-pl">
-          Wybrane prace wizualne, branding i eksperymenty typograficzne.
-        </p>
-
-        <div class="grid">
-          <a href="project-design.html" class="grid-item">
-            <div
-              class="grid-image"
-              style="
-                background-image: url(&quot;https://via.placeholder.com/400x400/2c4251/f5f5f0?text=Identity&quot;);
-              "
-            ></div>
-            <div class="grid-title">
-              <span class="lang-en">Brand Identity</span
-              ><span class="lang-pl">Identyfikacja Wizualna</span>
-            </div>
-          </a>
+      <article class="project-content">
+        <header class="project-header">
+          <h2>Project Title</h2>
+          <p class="meta">2026 / LP</p>
+        </header>
+        <div class="project-writeup">
+          <p class="lang-en">
+            This is where you write about the specific details of the music
+            project, the conceptual foundation, and the recording process.
+          </p>
+          <p class="lang-pl">
+            Tutaj możesz napisać o szczegółach projektu muzycznego, założeniach
+            koncepcyjnych i procesie nagrywania.
+          </p>
         </div>
-      </section>
+
+        <div
+          class="project-links"
+          style="
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px dotted var(--border-color);
+          "
+        >
+          <p>
+            <a href="#" target="_blank"
+              ><span class="lang-en">Listen on Spotify ↗</span
+              ><span class="lang-pl">Słuchaj na Spotify ↗</span></a
+            >
+          </p>
+          <p>
+            <a href="#" target="_blank"
+              ><span class="lang-en">Listen on Apple Music ↗</span
+              ><span class="lang-pl">Słuchaj na Apple Music ↗</span></a
+            >
+          </p>
+          <p>
+            <a href="#" target="_blank"
+              ><span class="lang-en">Listen on YouTube ↗</span
+              ><span class="lang-pl">Słuchaj na YouTube ↗</span></a
+            >
+          </p>
+        </div>
+      </article>
 
       <footer>
         <div class="sitemap">
           <a href="index.html"
             ><span class="lang-en">Home</span
             ><span class="lang-pl">Strona Główna</span></a
-          ><a href="personal.html"
+          >
+          <a href="personal.html"
             ><span class="lang-en">Music</span
             ><span class="lang-pl">Muzyka</span></a
-          ><a href="design.html"
+          >
+          <a href="design.html"
             ><span class="lang-en">Design</span
             ><span class="lang-pl">Projektowanie</span></a
-          ><a href="others.html"
+          >
+          <a href="others.html"
             ><span class="lang-en">Others</span
             ><span class="lang-pl">Inne</span></a
-          ><a href="bio.html">Bio</a>
+          >
+          <a href="bio.html">Bio</a>
         </div>
         <div class="socials">
-          <a href="mailto:witbezkacy@gmail.com"
+          <a href="mailto:witbezkacy@gmail.com" title="Email"
             ><svg
               width="24"
               height="24"
@@ -145,7 +159,7 @@
               ></path>
               <polyline points="22,6 12,13 2,6"></polyline></svg
           ></a>
-          <a href="#"
+          <a href="#" title="Instagram"
             ><svg
               width="24"
               height="24"
@@ -159,7 +173,7 @@
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
           ></a>
-          <a href="#"
+          <a href="#" title="Linktree"
             ><svg
               width="24"
               height="24"

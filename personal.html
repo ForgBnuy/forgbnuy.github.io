@@ -13,7 +13,7 @@
       content="#1a1a19"
       media="(prefers-color-scheme: dark)"
     />
-    <title>Design - witbezkacy</title>
+    <title>Personal - witbezkacy</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -42,7 +42,7 @@
             >
             <ul id="music-menu" class="tree-level-1">
               <li>
-                <a href="personal.html"
+                <a href="personal.html" class="active"
                   ><span class="lang-en">Personal</span
                   ><span class="lang-pl">Osobiste</span></a
                 >
@@ -62,7 +62,7 @@
             </ul>
           </li>
           <li>
-            <a href="design.html" class="active"
+            <a href="design.html"
               ><span class="lang-en">Graphic Design</span
               ><span class="lang-pl">Projektowanie</span></a
             >
@@ -85,31 +85,67 @@
     </aside>
 
     <main>
-      <section id="design">
+      <section id="personal">
         <h2>
-          <span class="lang-en">Graphic Design</span
-          ><span class="lang-pl">Projektowanie Graficzne</span>
+          <span class="lang-en">Personal Discography</span
+          ><span class="lang-pl">Osobista Dyskografia</span>
         </h2>
-        <p class="lang-en">
-          Selected visual works, branding, and typography experiments.
-        </p>
-        <p class="lang-pl">
-          Wybrane prace wizualne, branding i eksperymenty typograficzne.
-        </p>
+        <p class="lang-en">Chronological archive of solo releases.</p>
+        <p class="lang-pl">Chronologiczne archiwum solowych wydawnictw.</p>
 
-        <div class="grid">
-          <a href="project-design.html" class="grid-item">
-            <div
-              class="grid-image"
-              style="
-                background-image: url(&quot;https://via.placeholder.com/400x400/2c4251/f5f5f0?text=Identity&quot;);
-              "
-            ></div>
-            <div class="grid-title">
-              <span class="lang-en">Brand Identity</span
-              ><span class="lang-pl">Identyfikacja Wizualna</span>
-            </div>
-          </a>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <span class="lang-en">Year</span
+                  ><span class="lang-pl">Rok</span>
+                </th>
+                <th>
+                  <span class="lang-en">Release</span
+                  ><span class="lang-pl">Wydanie</span>
+                </th>
+                <th>Format</th>
+                <th>
+                  <span class="lang-en">Listen</span
+                  ><span class="lang-pl">Słuchaj</span>
+                </th>
+                <th>
+                  <span class="lang-en">Details</span
+                  ><span class="lang-pl">Szczegóły</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label-en="Year" data-label-pl="Rok">2026</td>
+                <td data-label-en="Release" data-label-pl="Wydanie">
+                  Album Title
+                </td>
+                <td data-label-en="Format" data-label-pl="Format">LP</td>
+                <td data-label-en="Listen" data-label-pl="Słuchaj">
+                  <a href="#">YouTube</a> / <a href="#">Apple Music</a>
+                </td>
+                <td data-label-en="Details" data-label-pl="Szczegóły">
+                  <a href="project-personal.html"
+                    ><span class="lang-en">Read Notes</span
+                    ><span class="lang-pl">Notatki</span></a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td data-label-en="Year" data-label-pl="Rok">2024</td>
+                <td data-label-en="Release" data-label-pl="Wydanie">
+                  EP Title
+                </td>
+                <td data-label-en="Format" data-label-pl="Format">EP</td>
+                <td data-label-en="Listen" data-label-pl="Słuchaj">
+                  <a href="#">YouTube</a> / <a href="#">Spotify</a>
+                </td>
+                <td data-label-en="Details" data-label-pl="Szczegóły">—</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -130,7 +166,7 @@
           ><a href="bio.html">Bio</a>
         </div>
         <div class="socials">
-          <a href="mailto:witbezkacy@gmail.com"
+          <a href="mailto:witbezkacy@gmail.com" title="Email"
             ><svg
               width="24"
               height="24"
@@ -145,7 +181,7 @@
               ></path>
               <polyline points="22,6 12,13 2,6"></polyline></svg
           ></a>
-          <a href="#"
+          <a href="#" title="Instagram"
             ><svg
               width="24"
               height="24"
@@ -159,7 +195,7 @@
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
           ></a>
-          <a href="#"
+          <a href="#" title="Linktree"
             ><svg
               width="24"
               height="24"

@@ -3,114 +3,212 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andrzej Śleszyński | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22monospace%22 font-weight=%22900%22 fill=%22%232E48FF%22>&amp;/</text></svg>"
+    <meta
+      name="theme-color"
+      content="#F5F5F0"
+      media="(prefers-color-scheme: light)"
     />
+    <meta
+      name="theme-color"
+      content="#1a1a19"
+      media="(prefers-color-scheme: dark)"
+    />
+    <title>Home - witbezkacy</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="wiki-header">
-      <nav class="nav-top">
-        <div class="site-title">
-          <a href="index.html">ANDRZEJ_ŚLESZYŃSKI</a>
+    <div class="grain-overlay solid-gradient"></div>
+
+    <aside class="sidebar">
+      <div class="sidebar-header solid-gradient">
+        <button class="menu-btn" aria-label="Menu">☰</button>
+        <h1><a href="index.html">witbezkacy</a></h1>
+        <div class="header-controls">
+          <button class="lang-btn">PL</button>
+          <button class="theme-btn" aria-label="Toggle Dark Mode">🌓</button>
         </div>
-        <div class="nav-links">
-          <a href="design.html">DESIGN</a><a href="music.html">MUSIC</a
-          ><a href="bio.html">BIO</a>
-        </div>
-      </nav>
-      <div class="context-bar">
-        <div class="path">
-          <a href="index.html" style="text-decoration: none; color: inherit"
-            >INDEX</a
-          >
-          / <span class="active-context">HOME</span>
-        </div>
-        <div class="metadata">SYSTEM_V1.15</div>
       </div>
-    </header>
+      <nav id="nav-links" class="solid-gradient">
+        <ul class="nav-tree">
+          <li>
+            <a href="index.html" class="active"
+              ><span class="lang-en">Home</span
+              ><span class="lang-pl">Strona Główna</span></a
+            >
+          </li>
+          <li>
+            <a href="personal.html"
+              ><span class="lang-en">Music</span
+              ><span class="lang-pl">Muzyka</span></a
+            >
+            <ul id="music-menu" class="tree-level-1">
+              <li>
+                <a href="personal.html"
+                  ><span class="lang-en">Personal</span
+                  ><span class="lang-pl">Osobiste</span></a
+                >
+                <ul class="tree-level-2">
+                  <li><a href="project-personal.html">Album Title</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="projects.html"
+                  ><span class="lang-en">Projects</span
+                  ><span class="lang-pl">Projekty</span></a
+                >
+                <ul class="tree-level-2">
+                  <li><a href="project-collab.html">Project Alpha</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="design.html"
+              ><span class="lang-en">Graphic Design</span
+              ><span class="lang-pl">Projektowanie</span></a
+            >
+            <ul id="design-menu" class="tree-level-1">
+              <li><a href="project-design.html">Brand Identity</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="others.html"
+              ><span class="lang-en">Others</span
+              ><span class="lang-pl">Inne</span></a
+            >
+            <ul id="others-menu" class="tree-level-1">
+              <li><a href="project-other.html">Sound Essay</a></li>
+            </ul>
+          </li>
+          <li><a href="bio.html">Bio / CV</a></li>
+        </ul>
+      </nav>
+    </aside>
 
     <main>
-      <section class="intro-wrap">
-        <div class="intro-text">
-          <h1>ANDRZEJ_ŚLESZYŃSKI</h1>
-          <p>Muzyk, kompozytor, czasem grafik.</p>
-          <div class="button-group" style="margin-top: 25px">
-            <a
-              href="design.html"
-              class="btn btn-cobalt"
-              style="
-                padding: 10px 20px;
-                font-size: 10px;
-                border: 1px solid #000;
-                background: #2e48ff;
-                color: #fff;
-                text-decoration: none;
-                font-weight: bold;
-              "
-              >EXPLORE_DESIGN</a
-            >
-            <a
-              href="music.html"
-              class="btn btn-tangerine"
-              style="
-                padding: 10px 20px;
-                font-size: 10px;
-                border: 1px solid #000;
-                background: #ff3e00;
-                color: #fff;
-                text-decoration: none;
-                font-weight: bold;
-                margin-left: 10px;
-              "
-              >EXPLORE_SOUND</a
-            >
+      <section id="home">
+        <div class="profile-section">
+          <img
+            src="https://via.placeholder.com/300x300/2c4251/f5f5f0?text=Photo"
+            alt="witbezkacy photo"
+            class="profile-photo"
+          />
+          <div class="profile-text">
+            <h2>
+              <span class="lang-en">Welcome</span
+              ><span class="lang-pl">Witamy</span>
+            </h2>
+            <p class="lang-en">
+              I am a musician, writer, producer, and graphic designer. Navigate
+              using the menu to explore my work.
+            </p>
+            <p class="lang-pl">
+              Jestem muzykiem, pisarzem, producentem i grafikiem. Użyj menu, aby
+              odkryć moje prace.
+            </p>
           </div>
         </div>
-        <div class="photo-container">
-          <img src="photo.jpg" alt="Andrzej" class="square-photo" />
+
+        <h3 style="margin-top: 4rem; margin-bottom: 2rem">
+          <span class="lang-en">Recent Work</span
+          ><span class="lang-pl">Najnowsze Prace</span>
+        </h3>
+        <div class="grid">
+          <a href="project-personal.html" class="grid-item">
+            <div
+              class="grid-image"
+              style="
+                background-image: url(&quot;https://via.placeholder.com/400x400/2c4251/f5f5f0?text=Personal&quot;);
+              "
+            ></div>
+            <div class="grid-title">
+              Album Title <br /><span class="grid-meta"
+                ><span class="lang-en">Music / Personal</span
+                ><span class="lang-pl">Muzyka / Osobiste</span></span
+              >
+            </div>
+          </a>
+          <a href="project-collab.html" class="grid-item">
+            <div
+              class="grid-image"
+              style="
+                background-image: url(&quot;https://via.placeholder.com/400x400/d16b54/f5f5f0?text=Projects&quot;);
+              "
+            ></div>
+            <div class="grid-title">
+              Project Alpha <br /><span class="grid-meta"
+                ><span class="lang-en">Music / Projects</span
+                ><span class="lang-pl">Muzyka / Projekty</span></span
+              >
+            </div>
+          </a>
+          <a href="project-design.html" class="grid-item">
+            <div
+              class="grid-image"
+              style="
+                background-image: url(&quot;https://via.placeholder.com/400x400/5a7a8c/f5f5f0?text=Design&quot;);
+              "
+            ></div>
+            <div class="grid-title">
+              Brand Identity <br /><span class="grid-meta"
+                ><span class="lang-en">Graphic Design</span
+                ><span class="lang-pl">Projektowanie</span></span
+              >
+            </div>
+          </a>
+          <a href="project-other.html" class="grid-item">
+            <div
+              class="grid-image"
+              style="
+                background-image: url(&quot;https://via.placeholder.com/400x400/d4a35c/f5f5f0?text=Other&quot;);
+              "
+            ></div>
+            <div class="grid-title">
+              Sound Essay <br /><span class="grid-meta"
+                ><span class="lang-en">Others</span
+                ><span class="lang-pl">Inne</span></span
+              >
+            </div>
+          </a>
         </div>
       </section>
 
-      <section class="content-section">
-        <h2 class="section-title">Najnowsze_Projekty</h2>
-        <div class="wiki-grid">
-          <div class="wiki-entry">
-            <a
-              href="projects/design/impro-kapciu.html"
-              class="visual-link cobalt-bg"
-              >01</a
-            >
-            <div class="entry-meta">
-              <span class="label">DESIGN</span
-              ><span class="title">IMPRO_W_KAPCIU</span>
-            </div>
-          </div>
-          <div class="wiki-entry">
-            <a href="music.html" class="visual-link tangerine-bg">▶</a>
-            <div class="entry-meta">
-              <span class="label">WITBEZKACY</span
-              ><span class="title">SKĄPIEC_LP</span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="wiki-footer">
-      <div class="footer-wrap">
+      <footer>
         <div class="sitemap">
-          <a href="index.html">Home</a><a href="design.html">Design</a
-          ><a href="music.html">Music</a><a href="bio.html">Bio</a>
+          <a href="index.html"
+            ><span class="lang-en">Home</span
+            ><span class="lang-pl">Strona Główna</span></a
+          ><a href="personal.html"
+            ><span class="lang-en">Music</span
+            ><span class="lang-pl">Muzyka</span></a
+          ><a href="design.html"
+            ><span class="lang-en">Design</span
+            ><span class="lang-pl">Projektowanie</span></a
+          ><a href="others.html"
+            ><span class="lang-en">Others</span
+            ><span class="lang-pl">Inne</span></a
+          ><a href="bio.html">Bio</a>
         </div>
-        <div class="social-links">
-          <a href="https://instagram.com/witbezkacy" target="_blank">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
+        <div class="socials">
+          <a href="mailto:witbezkacy@gmail.com" title="Email"
+            ><svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline></svg
+          ></a>
+          <a href="#" title="Instagram"
+            ><svg
+              width="24"
+              height="24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
@@ -119,12 +217,28 @@
             >
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-          <a href="mailto:witbezkacy@gmail.com">&#9993;</a>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
+          ></a>
+          <a href="#" title="Linktree"
+            ><svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+              ></path>
+              <path
+                d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+              ></path></svg
+          ></a>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </main>
+    <script src="js/script.js"></script>
   </body>
 </html>
