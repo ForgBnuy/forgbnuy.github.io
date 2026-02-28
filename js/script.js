@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Auto-expand active sub-menus and color parent links
   const activeLink = document.querySelector(".nav-tree a.active");
   if (activeLink) {
-    // 1. If it has a sibling UL, open it (e.g. we clicked the Hub page itself)
     let siblingUl = activeLink.nextElementSibling;
     if (
       siblingUl &&
@@ -18,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
       siblingUl.classList.add("open");
     }
 
-    // 2. Walk up and open parents
     let parentUl = activeLink.closest(".tree-level-1, .tree-level-2");
     while (parentUl) {
       parentUl.classList.add("open");
@@ -32,13 +30,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Theme Logic
-  const savedTheme = localStorage.getItem("theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-    htmlElement.setAttribute("data-theme", "dark");
-  }
+  // Click logic for expandable category folders
+  const navFolders = document.querySelectorAll(".nav-toggle");
+  navFolders.forEach((folder) => {
+    folder.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = folder.getAttribute("data-target");
+      const targetUl = document.getElementById(targetId);
+      targetUl.classList.toggle("open");
+      folder.classList.toggle("expanded-parent");
+    });
+  });
 
+  // INITIAL STATE IS NOW HANDLED IN HTML <HEAD> TO PREVENT FLASHING.
+  // We only need to set the correct text on the language buttons on load.
+  const currentLang = htmlElement.getAttribute("lang") || "en";
+  langToggles.forEach(
+    (btn) => (btn.textContent = currentLang === "en" ? "PL" : "EN"),
+  );
+
+  // Theme Toggle Button Logic
   themeToggles.forEach((btn) => {
     btn.addEventListener("click", () => {
       if (htmlElement.getAttribute("data-theme") === "dark") {
@@ -51,13 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Language Logic
-  const savedLang = localStorage.getItem("lang") || "en";
-  htmlElement.setAttribute("lang", savedLang);
-  langToggles.forEach(
-    (btn) => (btn.textContent = savedLang === "en" ? "PL" : "EN"),
-  );
-
+  // Language Toggle Button Logic
   langToggles.forEach((btn) => {
     btn.addEventListener("click", () => {
       if (htmlElement.getAttribute("lang") === "en") {
@@ -72,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Sidebar Toggling
+  // Sidebar Toggling (Mobile)
   menuBtn.addEventListener("click", () => {
     if (window.innerWidth <= 768) {
       navLinks.classList.toggle("active");
@@ -82,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Mobile Link Auto-close
-  navLinks.querySelectorAll("a").forEach((link) => {
+  navLinks.querySelectorAll("a:not(.nav-toggle)").forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 768) {
         navLinks.classList.remove("active");

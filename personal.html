@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
+      name="description"
+      content="Portfolio of witbezkacy - Musician, Writer, Producer, and Graphic Designer based in Katowice."
+    />
+    <meta
       name="theme-color"
       content="#F5F5F0"
       media="(prefers-color-scheme: light)"
@@ -14,7 +18,24 @@
       media="(prefers-color-scheme: dark)"
     />
     <title>Personal - witbezkacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+      const savedLang = localStorage.getItem("lang") || "en";
+      document.documentElement.setAttribute("lang", savedLang);
+    </script>
   </head>
   <body>
     <div class="grain-overlay solid-gradient"></div>
@@ -67,7 +88,7 @@
               ><span class="lang-pl">Projektowanie</span></a
             >
             <ul id="design-menu" class="tree-level-1">
-              <li><a href="project-design.html">Brand Identity</a></li>
+              <li><a href="project-design.html">Facebook Events</a></li>
             </ul>
           </li>
           <li>
@@ -98,10 +119,6 @@
             <thead>
               <tr>
                 <th>
-                  <span class="lang-en">Year</span
-                  ><span class="lang-pl">Rok</span>
-                </th>
-                <th>
                   <span class="lang-en">Release</span
                   ><span class="lang-pl">Wydanie</span>
                 </th>
@@ -111,6 +128,10 @@
                   ><span class="lang-pl">Słuchaj</span>
                 </th>
                 <th>
+                  <span class="lang-en">Year</span
+                  ><span class="lang-pl">Rok</span>
+                </th>
+                <th>
                   <span class="lang-en">Details</span
                   ><span class="lang-pl">Szczegóły</span>
                 </th>
@@ -118,14 +139,20 @@
             </thead>
             <tbody>
               <tr>
-                <td data-label-en="Year" data-label-pl="Rok">2026</td>
                 <td data-label-en="Release" data-label-pl="Wydanie">
                   Album Title
                 </td>
                 <td data-label-en="Format" data-label-pl="Format">LP</td>
                 <td data-label-en="Listen" data-label-pl="Słuchaj">
-                  <a href="#">YouTube</a> / <a href="#">Apple Music</a>
+                  <a href="#" target="_blank" rel="noopener noreferrer"
+                    >YouTube</a
+                  >
+                  /
+                  <a href="#" target="_blank" rel="noopener noreferrer"
+                    >Apple Music</a
+                  >
                 </td>
+                <td data-label-en="Year" data-label-pl="Rok">2026</td>
                 <td data-label-en="Details" data-label-pl="Szczegóły">
                   <a href="project-personal.html"
                     ><span class="lang-en">Read Notes</span
@@ -134,14 +161,20 @@
                 </td>
               </tr>
               <tr>
-                <td data-label-en="Year" data-label-pl="Rok">2024</td>
                 <td data-label-en="Release" data-label-pl="Wydanie">
                   EP Title
                 </td>
                 <td data-label-en="Format" data-label-pl="Format">EP</td>
                 <td data-label-en="Listen" data-label-pl="Słuchaj">
-                  <a href="#">YouTube</a> / <a href="#">Spotify</a>
+                  <a href="#" target="_blank" rel="noopener noreferrer"
+                    >YouTube</a
+                  >
+                  /
+                  <a href="#" target="_blank" rel="noopener noreferrer"
+                    >Spotify</a
+                  >
                 </td>
+                <td data-label-en="Year" data-label-pl="Rok">2024</td>
                 <td data-label-en="Details" data-label-pl="Szczegóły">—</td>
               </tr>
             </tbody>
@@ -166,7 +199,7 @@
           ><a href="bio.html">Bio</a>
         </div>
         <div class="socials">
-          <a href="mailto:witbezkacy@gmail.com" title="Email"
+          <a href="mailto:witbezkacy@gmail.com" title="Email" aria-label="Email"
             ><svg
               width="24"
               height="24"
@@ -181,7 +214,7 @@
               ></path>
               <polyline points="22,6 12,13 2,6"></polyline></svg
           ></a>
-          <a href="#" title="Instagram"
+          <a href="#" title="Instagram" aria-label="Instagram"
             ><svg
               width="24"
               height="24"
@@ -195,7 +228,7 @@
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
           ></a>
-          <a href="#" title="Linktree"
+          <a href="#" title="Linktree" aria-label="Linktree"
             ><svg
               width="24"
               height="24"

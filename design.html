@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
+      name="description"
+      content="Portfolio of witbezkacy - Musician, Writer, Producer, and Graphic Designer based in Katowice."
+    />
+    <meta
       name="theme-color"
       content="#F5F5F0"
       media="(prefers-color-scheme: light)"
@@ -14,7 +18,24 @@
       media="(prefers-color-scheme: dark)"
     />
     <title>Design - witbezkacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+      const savedLang = localStorage.getItem("lang") || "en";
+      document.documentElement.setAttribute("lang", savedLang);
+    </script>
   </head>
   <body>
     <div class="grain-overlay solid-gradient"></div>
@@ -130,7 +151,7 @@
           ><a href="bio.html">Bio</a>
         </div>
         <div class="socials">
-          <a href="mailto:witbezkacy@gmail.com"
+          <a href="mailto:witbezkacy@gmail.com" title="Email" aria-label="Email"
             ><svg
               width="24"
               height="24"
@@ -145,7 +166,7 @@
               ></path>
               <polyline points="22,6 12,13 2,6"></polyline></svg
           ></a>
-          <a href="#"
+          <a href="#" title="Instagram" aria-label="Instagram"
             ><svg
               width="24"
               height="24"
@@ -159,7 +180,7 @@
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
           ></a>
-          <a href="#"
+          <a href="#" title="Linktree" aria-label="Linktree"
             ><svg
               width="24"
               height="24"
