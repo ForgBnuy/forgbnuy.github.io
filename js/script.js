@@ -42,8 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // INITIAL STATE IS NOW HANDLED IN HTML <HEAD> TO PREVENT FLASHING.
-  // We only need to set the correct text on the language buttons on load.
   const currentLang = htmlElement.getAttribute("lang") || "en";
   langToggles.forEach(
     (btn) => (btn.textContent = currentLang === "en" ? "PL" : "EN"),
@@ -92,6 +90,48 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.innerWidth <= 768) {
         navLinks.classList.remove("active");
       }
+    });
+  });
+
+  // --- LIGHTBOX (IMAGE ZOOM) LOGIC ---
+  let lightboxObj = null;
+
+  const createLightbox = () => {
+    const lightbox = document.createElement("div");
+    lightbox.classList.add("lightbox");
+
+    const img = document.createElement("img");
+    lightbox.appendChild(img);
+    document.body.appendChild(lightbox);
+
+    // Close when clicking anywhere on the overlay
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+    });
+
+    // Close when pressing the Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("active")) {
+        lightbox.classList.remove("active");
+      }
+    });
+
+    return { lightbox, img };
+  };
+
+  // Find all images we want to make zoomable
+  const zoomableImages = document.querySelectorAll(
+    ".event-bg-grid img, .design-image-grid img, .profile-photo",
+  );
+
+  zoomableImages.forEach((image) => {
+    image.addEventListener("click", () => {
+      if (!lightboxObj) {
+        lightboxObj = createLightbox();
+      }
+      lightboxObj.img.src = image.src;
+      if (image.alt) lightboxObj.img.alt = image.alt;
+      lightboxObj.lightbox.classList.add("active");
     });
   });
 });
